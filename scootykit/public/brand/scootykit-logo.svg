@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 48" role="img" aria-label="ScootyKit">
+  <rect width="48" height="48" rx="12" fill="#111827"/>
+  <path transform="translate(4.2 0) skewX(-8)" d="M29.5 14.2C27.8 12.6 25.6 11.8 23 11.8c-5 0-8.2 2.9-8.2 6.7 0 4.3 3.7 5.7 8.7 6.6 5.2.9 9 2.6 9 7 0 4-3.6 6.9-9.1 6.9-3.3 0-6.1-1-8.2-3" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="35.4" cy="12.6" r="3.4" fill="#F43F5E"/>
+  <text x="60" y="33" font-family="'Plus Jakarta Sans', Inter, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="-0.6" fill="#111827">Scooty<tspan fill="#F43F5E">Kit</tspan></text>
+</svg>

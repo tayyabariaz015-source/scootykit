@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   ScootyKit design tokens
+   Navy = trust/structure · Coral = actions/highlights (use sparingly)
+------------------------------------------------------------------- */
+@theme {
+  --color-navy-950: #0b111e;
+  --color-navy-900: #111827;
+  --color-navy-800: #1f2937;
+  --color-navy-700: #334155;
+
+  --color-coral-50: #fff1f3;
+  --color-coral-100: #ffe4e8;
+  --color-coral-200: #fecdd5;
+  --color-coral-500: #f43f5e;
+  --color-coral-600: #e11d48;
+  --color-coral-700: #be123c;
+
+  --color-surface: #f8fafc;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 1rem;
+  --shadow-card: 0 1px 2px rgb(17 24 39 / 0.04), 0 4px 16px -4px rgb(17 24 39 / 0.08);
+  --shadow-lift: 0 2px 4px rgb(17 24 39 / 0.04), 0 16px 32px -8px rgb(17 24 39 / 0.16);
+
+  --animate-shimmer: shimmer 1.6s linear infinite;
+  --animate-fade-up: fade-up 0.5s ease-out both;
+
+  @keyframes shimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-navy-900 font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-navy-900;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-coral-500;
+  }
+  ::selection {
+    @apply bg-coral-100 text-navy-900;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .skeleton {
+    background: linear-gradient(90deg, #eef2f6 0%, #f8fafc 40%, #eef2f6 80%);
+    background-size: 800px 100%;
+    @apply animate-shimmer rounded-lg;
+  }
+  .prose-sk {
+    @apply text-[15px] leading-7 text-navy-700;
+  }
+  .prose-sk h2 { @apply mt-10 mb-3 text-xl font-bold text-navy-900; }
+  .prose-sk h3 { @apply mt-6 mb-2 text-lg font-semibold text-navy-900; }
+  .prose-sk p { @apply mb-4; }
+  .prose-sk ul { @apply mb-4 list-disc space-y-1.5 pl-5; }
+  .prose-sk a { @apply font-medium text-coral-600 underline underline-offset-2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

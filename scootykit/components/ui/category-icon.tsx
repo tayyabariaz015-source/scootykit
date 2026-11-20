@@ -1,0 +1,65 @@
+import {
+  Armchair,
+  BatteryCharging,
+  Briefcase,
+  CloudRain,
+  Footprints,
+  Gauge,
+  Glasses,
+  GripHorizontal,
+  Hand,
+  HardHat,
+  Headphones,
+  Lightbulb,
+  Lock,
+  MapPin,
+  Megaphone,
+  Package,
+  ScanEye,
+  Shield,
+  ShieldCheck,
+  ShoppingBasket,
+  Smartphone,
+  SquareParking,
+  Sticker,
+  Umbrella,
+  Wind,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
+
+export const CATEGORY_ICONS: Record<string, LucideIcon> = {
+  "hard-hat": HardHat,
+  hand: Hand,
+  glasses: Glasses,
+  umbrella: Umbrella,
+  armchair: Armchair,
+  "scan-eye": ScanEye,
+  sticker: Sticker,
+  smartphone: Smartphone,
+  "map-pin": MapPin,
+  lock: Lock,
+  "shopping-basket": ShoppingBasket,
+  package: Package,
+  "cloud-rain": CloudRain,
+  shield: Shield,
+  lightbulb: Lightbulb,
+  megaphone: Megaphone,
+  gauge: Gauge,
+  wrench: Wrench,
+  "grip-horizontal": GripHorizontal,
+  footprints: Footprints,
+  briefcase: Briefcase,
+  headphones: Headphones,
+  "shield-check": ShieldCheck,
+  wind: Wind,
+  "battery-charging": BatteryCharging,
+  "square-parking": SquareParking,
+};
+
+export const CATEGORY_ICON_NAMES = Object.keys(CATEGORY_ICONS);
+
+export function CategoryIcon({ name, className }: { name: string; className?: string }) {
+  const Icon = CATEGORY_ICONS[name] ?? Package;
+  return <Icon className={className} aria-hidden="true" />;
+}
